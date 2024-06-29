@@ -1,6 +1,10 @@
+import streamlit as st
 import pandas as pd
+from datetime import time, timedelta
 from keplergl import KeplerGl
 from streamlit_keplergl import keplergl_static
+
+container = st.container
 
 # Example DataFrame
 data = {
@@ -14,11 +18,11 @@ df = pd.DataFrame(data)
 
 def map_color(intensity):
     if intensity <= 30:
-        return 'yellow'
+        return [0, 255, 0]
     elif intensity <= 60:
-        return 'green'
+        return [255, 255, 0]
     else:
-        return 'intense red'
+        return [255, 0, 0]
     
 df['color'] = df['intensity'].apply(map_color)
 
@@ -54,7 +58,7 @@ complete_config = {
 }
 
 # Create a KeplerGl map with the complete configuration
-map_1 = KeplerGl(height=500, width=800)
+map_1 = KeplerGl(height=500, width=8000)
 map_1.config = complete_config
 
 # Add data to the map
@@ -67,5 +71,8 @@ map_1.config['mapState'] = {
     'zoom': 12
 }
 
+st.selectbox("giorno", ("LUN", "MAR", "MER", "GIO", "VEN", "SAB", "DOM"), index=None, placeholder="Scegli un giorno", label_visibility="hidden")
+st.slider("orario", label_visibility="hidden", min_value=(time(00, 00)), max_value=(time(23, 00)), value=(time(00, 00)), step=timedelta(hours=1),)
 # Display the map in Streamlit
 keplergl_static(map_1)
+
