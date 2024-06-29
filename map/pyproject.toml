@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hackattack2024"
+version = "0.1.0"
+description = ""
+authors = ["Julio Formiga <julio.formiga@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.9"
+streamlit = "^1.36.0"
+noisereduce = "^3.0.2"
+numpy = "1.26.4"
+pydub = "^0.25.1"
+demucs = "^4.0.1"
+streamlit-audiorecorder = "^0.0.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
