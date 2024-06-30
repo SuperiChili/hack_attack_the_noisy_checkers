@@ -43,11 +43,15 @@ def generate_random_record(qnt=10):
     return pd.DataFrame(data)
 
 now = dt.now()
-current_time = now.time()
+
+@st.cache
+def take_time():
+    current_time = now.time()
+    return (current_time)
 
 def main():
     st.title("Ristoranti nella tua zona")
-    
+   
     current_weekday = now.weekday()
     
     st.selectbox("giorno",
@@ -59,7 +63,7 @@ def main():
               label_visibility="hidden", 
               min_value=(time(00, 00)), 
               max_value=(time(23, 00)), 
-              value=(current_time), 
+              value=(take_time()), 
               step=timedelta(hours=1))
     df = generate_random_record(80)
     map_ = create_map(df)
