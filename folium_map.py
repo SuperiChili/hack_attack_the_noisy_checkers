@@ -16,9 +16,8 @@ def get_color(noise):
 
 
 def create_map(df):
-    m = folium.Map(
-        location=[df.iloc[0]["latitudine"], df.iloc[0]["longitudine"]], zoom_start=13
-    )
+    florence_center = [43.7696, 11.2558]
+    m = folium.Map(location=florence_center, zoom_start=13)
     for _, row in df.iterrows():
         folium.Marker(
             location=[row["latitudine"], row["longitudine"]],
