@@ -1,9 +1,11 @@
 COME AVVIARE IL PROGETTO
 
+- installare python 3.11.9
+	versione richiesta per streamlit
+
 - installare streamlit
 	https://docs.streamlit.io/get-started/installation
-- installare keplergl
-	https://github.com/chrieke/streamlit-keplergl
+
 - lanciare streamlit run app.py nella directory 
 
 

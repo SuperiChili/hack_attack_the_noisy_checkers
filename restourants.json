@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Trattoria Zà Zà",
+        "latitude": 43.776496,
+        "longitude": 11.253561
+    },
+    {
+        "id": 2,
+        "name": "Osteria All’Antico Vinaio",
+        "latitude": 43.768660,
+        "longitude": 11.257411
+    },
+    {
+        "id": 3,
+        "name": "La Buchetta Food & Wine Restaurant",
+        "latitude": 43.766640,
+        "longitude": 11.259655
+    },
+    {
+        "id": 4,
+        "name": "Trattoria Mario",
+        "latitude": 43.776297,
+        "longitude": 11.254317
+    },
+    {
+        "id": 5,
+        "name": "Il Vezzo",
+        "latitude": 43.775446,
+        "longitude": 11.254735
+    },
+    {
+        "id": 6,
+        "name": "Ristorante La Spada",
+        "latitude": 43.773622,
+        "longitude": 11.249187
+    },
+    {
+        "id": 7,
+        "name": "Ristorante Del Fagioli",
+        "latitude": 43.768070,
+        "longitude": 11.261041
+    },
+    {
+        "id": 8,
+        "name": "L'Osteria di Giovanni",
+        "latitude": 43.771096,
+        "longitude": 11.248079
+    },
+    {
+        "id": 9,
+        "name": "Trattoria La Casalinga",
+        "latitude": 43.766320,
+        "longitude": 11.246884
+    },
+    {
+        "id": 10,
+        "name": "Cibreo Trattoria",
+        "latitude": 43.769558,
+        "longitude": 11.266993
+    },
+    {
+        "id": 11,
+        "name": "Ristorante Belcore",
+        "latitude": 43.776421,
+        "longitude": 11.247803
+    },
+    {
+        "id": 12,
+        "name": "Trattoria dall'Oste",
+        "latitude": 43.776842,
+        "longitude": 11.246213
+    }
+]
