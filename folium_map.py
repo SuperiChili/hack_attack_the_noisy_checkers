@@ -1,6 +1,7 @@
 import pandas as pd
 import folium
 import streamlit as st
+from datetime import time, timedelta
 from streamlit_folium import st_folium, folium_static
 import random
 
@@ -43,7 +44,9 @@ def generate_random_record(qnt=10):
 
 
 def main():
-    st.title("Folium Map in Streamlit")
+    st.title("Ristoranti nella tua zona")
+    st.selectbox("giorno", ("LUN", "MAR", "MER", "GIO", "VEN", "SAB", "DOM"), index=None, placeholder="Scegli un giorno", label_visibility="hidden")
+    st.slider("orario", label_visibility="hidden", min_value=(time(00, 00)), max_value=(time(23, 00)), value=(time(00, 00)), step=timedelta(hours=1),)
     df = generate_random_record(80)
     map_ = create_map(df)
     folium_static(map_, height=500)
