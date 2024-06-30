@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hack-attack-the-noisy-checkers"
+version = "0.1.0"
+description = ""
+authors = ["Julio Formiga <julio.formiga@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.36.0"
+folium = "^0.17.0"
+streamlit-folium = "^0.21.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
