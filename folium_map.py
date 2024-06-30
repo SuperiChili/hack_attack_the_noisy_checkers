@@ -7,6 +7,11 @@ from streamlit_folium import st_folium, folium_static
 import random
 
 
+st.set_page_config(
+    page_title="hack Attack: The Noisy Checkers",
+    page_icon="🔇",
+)
+
 def get_color(noise):
     if noise <= 30:
         return "green"
