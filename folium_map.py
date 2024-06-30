@@ -43,16 +43,15 @@ def generate_random_record(qnt=10):
 
 now = dt.now()
 
-@st.cache
+@st.cache_data
 def take_time():
     current_time = now.time()
     return (current_time)
 
 def main():
     st.title("Ristoranti nella tua zona")
-   
+
     current_weekday = now.weekday()
-    
     st.selectbox("giorno",
                   ("LUN", "MAR", "MER", "GIO", "VEN", "SAB", "DOM"),
                     index=current_weekday, 
