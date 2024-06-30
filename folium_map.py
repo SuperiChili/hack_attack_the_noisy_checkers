@@ -18,6 +18,7 @@ def get_color(noise):
 def get_current_gps_coordinates():
     g = geocoder.ip('me')
     if g.latlng is not None:
+        st.write(g.latlng)
         return g.latlng
     else:
         return None
@@ -41,7 +42,6 @@ def create_map(df):
         ).add_to(m)
     return m
 
-
 def generate_random_record(qnt=10):
     data = []
     for i in range(1, qnt + 1):
@@ -56,6 +56,7 @@ def generate_random_record(qnt=10):
         )
     return pd.DataFrame(data)
 
+
 now = dt.now()
 
 @st.cache_data
@@ -64,21 +65,23 @@ def take_time():
     return (current_time)
 
 def main():
-    st.title("Locali nella tua zona")
-
+    st.title("Rumorosità dei ristoranti a Firenze")
+   
     current_weekday = now.weekday()
-    st.selectbox("giorno",
-                  ("LUN", "MAR", "MER", "GIO", "VEN", "SAB", "DOM"),
+    selected_day = st.selectbox("giorno",
+                  ("Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"),
                     index=current_weekday, 
                     placeholder="Scegli un giorno", 
                     label_visibility="hidden")
-    st.slider("orario", 
+
+    selected_hour = st.slider("orario", 
               label_visibility="hidden", 
               min_value=(time(00, 00)), 
               max_value=(time(23, 00)), 
               value=(take_time()), 
               step=timedelta(hours=1))
-    df = generate_random_record(80)
+    df = generate_random_record(20)
+    st.write(df)
     map_ = create_map(df)
     folium_static(map_, height=500)
 

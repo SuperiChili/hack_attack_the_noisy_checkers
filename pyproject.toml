@@ -6,7 +6,7 @@ authors = ["Julio Formiga <julio.formiga@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11.9"
 streamlit = "^1.36.0"
 folium = "^0.17.0"
 streamlit-folium = "^0.21.0"
