@@ -1,5 +1,6 @@
 import pandas as pd
 import folium
+import geocoder
 import streamlit as st
 from datetime import time, timedelta, datetime as dt
 from streamlit_folium import st_folium, folium_static
@@ -14,10 +15,24 @@ def get_color(noise):
     else:
         return "red"
 
+def get_current_gps_coordinates():
+    g = geocoder.ip('me')
+    if g.latlng is not None:
+        return g.latlng
+    else:
+        return None
+#per motivi ignoti, l'ip della scuola e' in mezzo ai binari, le vere coordinate della scuola sono a seguire
+#43.77105336151461, 11.242748838610913
 
 def create_map(df):
-    florence_center = [43.7696, 11.2558]
-    m = folium.Map(location=florence_center, zoom_start=13)
+    my_position = get_current_gps_coordinates()
+    latitude, longitude = my_position
+    m = folium.Map(location=[latitude, longitude], zoom_start=13)
+    folium.Marker(
+            location=[latitude, longitude],
+            popup=f"mia posizione",
+            icon=folium.Icon(color="black", icon="arrow-down")
+        ).add_to(m)
     for _, row in df.iterrows():
         folium.Marker(
             location=[row["latitudine"], row["longitudine"]],
@@ -49,7 +64,7 @@ def take_time():
     return (current_time)
 
 def main():
-    st.title("Ristoranti nella tua zona")
+    st.title("Locali nella tua zona")
 
     current_weekday = now.weekday()
     st.selectbox("giorno",
