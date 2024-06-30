@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "hack-attack-2024"
+version = "0.1.0"
+description = ""
+authors = ["ciccio"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11.9"
+folium = "^0.17.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
